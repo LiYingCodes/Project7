@@ -1,0 +1,8 @@
+@mixin font-size($size-value) {
+    font-size: $size-value * 1px; /* fall back px value */
+    font-size: ($size-value/10) * 1rem;
+}
+
+// @mixin background($bgcolor1, $bgcolor2) {
+//     background: linear-gradient(to right, $bgcolor1 50%, $bgcolor2 50%);
+// }

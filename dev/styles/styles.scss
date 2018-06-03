@@ -1,8 +1,172 @@
-@import "_setup.scss";
-@import "_typography.scss";
+@import "setup";
+@import "utils";
+@import "typography";
 
+$accent: #2bdad3;
+$text: #2b2e2f;
+$subheader:#f5f7f8;
+$paragraph: #717779;
+$black: #000;
+$background:#f8f8f8;
+
+#about, #skills {
+    background: $background;
+}
+#projects, #contact {
+    background: white;
+}
+
+
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.inner-wrapper{
+    max-width: 1550px;
+    margin: 0 auto;
+}
 
 body {
-    background: #222;
-    color: whitesmoke;
+    background: $background;
+    color: $text;
+}
+
+.header {
+    background: 
+      linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%,
+      rgba(248, 248, 248, 1)),
+      url("/todd-quackenbush-47565-unsplash-resize.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; 
+
+    &__intro {
+        &--text{
+        margin-top: 15%;
+        }
+
+        &--icon-container {
+            i {
+                padding: 15px;
+                margin: 15px;
+                border: 2px solid $paragraph;
+                color: $paragraph;
+                border-radius: 50%;
+                opacity: 0.7;
+                transition: all 0.5s ease-in-out;
+            &:hover, &:focus {
+                background: $text;
+                color: $accent;
+                border: 2px solid $accent;
+                opacity: 1;
+                }
+            }
+        }
+    }
+    &__nav {
+        background: linear-gradient(rgba(255, 255, 255, 0.7)); 
+        padding: 0 100px;
+        
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &--logo {
+            width: 75px;
+            height: 75px;
+            padding:  5px;
+            img {
+                width:100%;
+            }
+        }
+
+        &--links ul {
+            list-style-type: none;
+            display:flex;
+        
+            a {
+                text-decoration: dotted;      
+                padding: 0 15px;  
+                &:hover,
+                &:focus {
+                    border-bottom: 4px solid $accent;   
+                }
+            }
+        }
+    }
+}
+
+
+.main__section--about {
+    display: flex;
+    justify-content: center;
+    &--img {
+        width: calc(50% - 5%);
+        margin-left: 5%;
+        img {
+            width: 75%;
+            box-shadow: 0 10px 0 $accent;
+        }
+    }
+    &--intro{
+        width: calc(50% - 10%);
+        margin-right: 10%;
+
+    }
+}
+
+.main__section--projects {
+    &--one,
+    &--two,
+    &--three {
+        display: flex;
+        width: 100%;
+        background: pink;
+        .primary {
+            min-width: 65%;
+            height: 500px;
+            border: 4px solid $accent;
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        }
+        .secondary {
+            width: 35%;
+            height: 500px;
+            box-shadow: 0 4px 0 $accent;
+        }
+    }
+
+
+}
+
+.main__section--skills {
+    &--row {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-icons{
+        // clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        border: 1px dotted $accent;
+        background: white;
+        box-shadow: 0 4px 0 $accent;
+        font-size: 100px;
+        display: inline-block;
+        padding: 0 50px;
+        margin: 15px;
+        opacity: 0.85;
+        transition: all 0.5s ease-in-out;
+        &:hover {
+            opacity: 1;
+            border: 1px solid $accent;
+            background: lighten(black, 30%);
+            transform: scale(1.1);
+        }
+
+        // .colored:hover{
+        //     color: $accent;
+        // }
+    }
 }
