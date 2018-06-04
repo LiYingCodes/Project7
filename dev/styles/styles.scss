@@ -4,28 +4,55 @@
 
 $accent: #2bdad3;
 $text: #2b2e2f;
-$subheader:#f5f7f8;
-$paragraph: #717779;
-$black: #000;
+$gray: #717779;
 $background:#f8f8f8;
+$white: #fff;
 
-#about, #skills {
-    background: $background;
+*{
+    scroll-behavior: smooth;
 }
-#projects, #contact {
+
+#about, #skills, #footer {
+    background: $background;    
+}
+#projects {
     background: white;
 }
 
+#contact, 
+#footer {
+    background: $text;
+}
 
 .wrapper {
     max-width: 1920px;
-    margin: 0 auto;
+    margin: 0px auto;
 }
 
 .inner-wrapper{
-    max-width: 1550px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 50px 0;
 }
+
+.inside-wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.chevron {
+    @include font-size(6);
+    margin: 0 auto;
+    text-align: center;
+    a{
+        &:hover{
+            color:$accent;
+        }
+    }
+}
+
+
 
 body {
     background: $background;
@@ -33,13 +60,23 @@ body {
 }
 
 .header {
+    position: relative;
     background: 
-      linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%,
-      rgba(248, 248, 248, 1)),
-      url("/todd-quackenbush-47565-unsplash-resize.jpg");
-    background-size: cover;
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 45%,
+      rgba(248, 248, 248, 1)), url('/logo2.png');
+    background-size: contain;
+    background-position: 90% 0;
     background-repeat: no-repeat;
     height: 100vh; 
+    @media (max-width: 360px) {
+        height: auto;
+    }
+
+    .chevron {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+    }
 
     &__intro {
         &--text{
@@ -47,126 +84,348 @@ body {
         }
 
         &--icon-container {
+            @media (max-width: 360px) {
+                    margin: 0 auto;  
+                    padding: 0; 
+                }
+            
             i {
                 padding: 15px;
                 margin: 15px;
-                border: 2px solid $paragraph;
-                color: $paragraph;
+                border: 2px solid $text;
+                color: $text;
                 border-radius: 50%;
                 opacity: 0.7;
-                transition: all 0.5s ease-in-out;
-            &:hover, &:focus {
-                background: $text;
+                transition: all 0.3s ease-in-out;
+               
+            &:hover, 
+            &:focus {
                 color: $accent;
                 border: 2px solid $accent;
                 opacity: 1;
+                transform: scale(1.1);
                 }
             }
         }
     }
     &__nav {
         background: linear-gradient(rgba(255, 255, 255, 0.7)); 
-        padding: 0 100px;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        @media (max-width: 700px) {
+            margin: 0;
+            padding: 0;
+        }
         
         .wrapper {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
+            margin: 0 auto;
         }
 
         &--logo {
             width: 75px;
-            height: 75px;
-            padding:  5px;
-            img {
-                width:100%;
+            padding-top: 5px;
+            @media (max-width: 700px) {
+                width: 100%;
+            }
+
+            &:hover,
+            &:focus{
+                transform: scale(1.1);
             }
         }
+        &--links {
+           width: 90%;
+           
+        }
 
-        &--links ul {
+        &--links .dropdown {
             list-style-type: none;
             display:flex;
+            justify-content: flex-end;
+            @media (max-width: 700px) {
+                display:none;
+                min-width: 100%;
+                background: linear-gradient(rgba(255, 255, 255, 0.7)); 
+                position: absolute;
+                top: 71%;
+                left: 0;
+                right:0;
+                text-align: center;
+                li:hover,
+                li:focus {
+                    background: lighten($accent, 20%);
+                    margin: 0;
+                    padding: 0;
+                }
+            }
         
             a {
-                text-decoration: dotted;      
-                padding: 0 15px;  
+                padding: 0 10px;
+                text-decoration: none;      
                 &:hover,
                 &:focus {
-                    border-bottom: 4px solid $accent;   
+                    border-bottom: 4px solid $accent;  
                 }
             }
         }
+        
+        &--responsive {
+            i {
+                @include font-size(50);
+                color: $accent;
+                &:hover,
+                &:focus {
+                    transform: scale(1.1);
+                }
+            }
+
+            #menu {
+                display:none;
+                @media (max-width: 700px) {
+                    display:block;
+                }
+            }
+
+            #close {
+                display:none;
+            }          
+        }
     }
 }
-
 
 .main__section--about {
     display: flex;
     justify-content: center;
+    height: 70vh;
+    @media (max-width: 700px) {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    &--img, 
+    &--intro {
+        width: calc(50% - 10%);
+        margin:0;
+        @media (max-width: 700px) {
+           width: 80%;
+        }
+    }
+
     &--img {
-        width: calc(50% - 5%);
-        margin-left: 5%;
+        margin-left: 10%;
+        @media (max-width: 700px) {
+            margin: 0;
+            padding:0;
+        }
         img {
-            width: 75%;
+            width: 100%;
             box-shadow: 0 10px 0 $accent;
         }
     }
-    &--intro{
-        width: calc(50% - 10%);
-        margin-right: 10%;
 
+    &--intro{
+        margin-right: 10%;
+        @media (max-width: 700px) {
+            margin: 0;
+            padding:0; 
+        }
     }
 }
 
 .main__section--projects {
-    &--one,
-    &--two,
-    &--three {
+    &--project {
         display: flex;
         width: 100%;
-        background: pink;
+        padding-top: 25px;
+        @media (max-width: 700px) {
+            flex-direction: column;
+        }
+
+        img {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
         .primary {
-            min-width: 65%;
-            height: 500px;
-            border: 4px solid $accent;
-            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            width: 60%;
+            @media (max-width: 700px) {
+                width: 100%;
+            }
         }
         .secondary {
-            width: 35%;
-            height: 500px;
-            box-shadow: 0 4px 0 $accent;
+            width: 40%;
+            background: $background;
+            @media (max-width: 700px) {
+                width: 100%;
+            }
         }
     }
-
-
 }
 
 .main__section--skills {
     &--row {
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     &-icons{
-        // clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
         border: 1px dotted $accent;
         background: white;
         box-shadow: 0 4px 0 $accent;
         font-size: 100px;
         display: inline-block;
         padding: 0 50px;
-        margin: 15px;
+        margin: 15px auto;
         opacity: 0.85;
-        transition: all 0.5s ease-in-out;
-        &:hover {
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
             opacity: 1;
             border: 1px solid $accent;
-            background: lighten(black, 30%);
             transform: scale(1.1);
         }
+        img{
+            height: 100px;
+            width: 100px;
+        }
+    }
+}
 
-        // .colored:hover{
-        //     color: $accent;
-        // }
+.main__section--contact {
+    position:relative;
+    color: $accent;
+    
+    .chevron {
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        a {
+            &:hover{
+                color:$background;
+            }
+        }
+        @media (max-width: 360px) {
+            top: 97%;
+            left: 47%;
+        }
+
+    }
+    
+    .footer__intro {
+        display:flex;
+        width: 100%;
+        @media (max-width: 850px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &--form,
+        &--contact {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+            @media (max-width: 360px) {
+                width: 100%;
+            }
+        }
+
+        &--form {
+            input {
+                border:none;
+                border-bottom: 2px solid $gray;
+                margin: 10px 0;
+                transition: all 0.3s ease-in-out;
+                
+                &:hover,
+                &:focus {
+                    border-bottom: 3px solid $accent;
+                }
+
+                @media (max-width: 360px) {
+                width: 85%;
+                }
+            }
+
+            textarea{
+                border: 2px solid $gray;
+                transition: all 0.3s ease-in-out;
+                &:hover,
+                &:focus {
+                    border: 3px solid $accent;
+                }
+
+                @media (max-width: 360px) {
+                width: 85%;
+                }
+            }
+            input[placeholder] {
+                color: $gray;
+                text-transform: capitalize;
+            }
+        }
+
+        &--contact {            
+            margin: 0 auto;
+
+           
+            li {
+                list-style-type: none;
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+                transition: all 0.3s ease-in-out;
+                &:hover,
+                &:focus{
+                    color: $accent;
+                }
+            }
+
+            img{
+                width: 30%;
+            }
+
+            &--icon-container{
+                i {
+                padding: 15px;
+                margin: 15px;
+                border: 2px solid $gray;
+                color: $gray;
+                border-radius: 50%;
+                opacity: 0.7;
+                transition: all 0.3s ease-in-out;
+                    &:hover, &:focus {
+                    color: $accent;
+                    border: 2px solid $accent;
+                    opacity: 1;
+                    transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    color: $accent;
+    .inner-wrapper {
+        p{
+            text-align: center;
+            margin:0;
+            padding:0;
+        }
     }
 }

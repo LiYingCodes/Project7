@@ -9,38 +9,43 @@
         href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" 
         integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" 
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Poppins" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
         
 
     <title>Li Ying Lim</title>
 </head>
 <body>
-    <header class="header">
+    <header class="header" id="home">
         <nav class="header__nav">
             <div class="wrapper">
                 <div class="header__nav--logo">
-                    <img src="logo.png" alt="">
+                    <a href="#home"><img src="logo.png" alt=""></a>
                 </div>
                 <div class="header__nav--links">
-                    <ul>
+                    <ul class="dropdown">
                         <li><a href="#about">About Me</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
+                <div class="header__nav--responsive" >
+                    <i class="fas fa-bars fa-10x" id="menu"></i>
+                    <i class="fas fa-times fa-10x" id="close"></i>
+                </div>
             </div>
         </nav>
         <div class="header__intro inner-wrapper">
             <div class="header__intro--text">
-                <h1 class="accent">Hello!</h1>
-                <h2>I'm Li Ying, Web Developer <br>based in Toronto.</h2>
+                <h1><span class="emphasis">Li Ying</span>Lim</h1>
+                <h2>Front-end web developer</h2>
             </div>
             <div class="header__intro--icon-container">
                 <i class="fab fa-linkedin-in"></i>
                 <i class="fab fa-twitter"></i>
                 <i class="fab fa-github-alt"></i>
             </div>
+            <div class="chevron"><a href="#about"><i class="fas fa-angle-double-down fa-10x"></i></a></div>
         </div>
     </header>
 
@@ -50,14 +55,15 @@
                 <h3>About Me</h3>
                 <div class="main__section--about">
                     <div class="main__section--about--img">
-                        <img src="2018-spring-li-ying-lim-3.jpg" alt="">
+                        <img src="2018-spring-li-ying-lim-3_EDIT_SQ.jpg" alt="">
                     </div>
                     <div class="main__section--about--intro">
-                        <p> Apart from coding and tech, I am curious about biology, history, languages, and
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero maxime delectus veniam consectetur architecto numquam aut officia nihil perspiciatis iste?</>
+                        <!-- <p> Apart from coding and tech, I am curious about biology, history, languages, and
                         social issues. Prior to web development I graduated from Western University with Honors Bachelor of Science, specialization
                         in Biology. My highlights there were an internship at a vaccine company, a marine biology field trip, and my thesis in developmental
                         biology. I then continued education and worked in personal financial services where I continued to grow, but ultimately decided
-                        to switch tracks.</p>
+                        to switch tracks.</p> -->
                     </div>
                 </div>
             </div>
@@ -67,37 +73,80 @@
         <section id="projects" class="main__section--projects">
            <div class="inner-wrapper">
                 <h3>Projects</h3>
-                <div class="main__section--projects--one">
+                <div class="main__section--projects--project">
                     <div class="primary">
                         <img src="http://codegold.photo/1024x732.jpg" alt="cutest pup">
                     </div>
                     <div class="secondary"> 
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit tempore corporis facere illum nostrum, sed, amet, facilis animi velit architecto aliquid quidem placeat? Corporis consectetur nisi magni minus aliquam est.
+                        <h4>To Do App - React Project</h4>
+                        <p class="tools">Tools Used</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit tempore corporis facere illum nostrum, sed, amet, facilis animi velit architecto aliquid quidem placeat? Corporis consectetur nisi magni minus aliquam est.</p>
+                        <div class="btn-row">
+                            <a href="#" class="btn">View Live</a>
+                            <a href="https://github.com/LiYingCodes/to-do-app" target="_blank" class="btn">Github</a>
+                        </div>
                     </div>
+                    
                 </div>
-                <div class="main__section--projects--two">
+
+                <div class="main__section--projects--project">
                     <div class="secondary">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, fugit, rem odio fugiat voluptates similique ipsam, quis ut nam illo possimus temporibus illum totam tenetur iste optio blanditiis est dolor?
-                    </div>
+                        <h4>Marvel API - Group React Project</h4>
+                        <p class="tools">Tools Used</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, totam. Fugit consectetur suscipit sunt, dolor
+                            sapiente neque minima, totam itaque ab harum eum illo magni nisi mollitia culpa, odio deleniti?</p>
+                        <div class="btn-row">
+                            <a href="#" class="btn">View Live</a>
+                            <a href="https://github.com/LiYingCodes/devAvengers" target="_blank" class="btn">Github</a>
+                        </div>
+                        </div>
                     <div class="primary">
                         <img src="http://codegold.photo/1024x732.jpg" alt="cutest pup">
                     </div>
+                    
                 </div>
-                <div class="main__section--projects--three">
-                    <div class="primary"><img src="http://codegold.photo/1024x732.jpg" alt="cutest pup">
+
+                <div class="main__section--projects--project">
+                    <div class="primary">
+                        <img src="http://codegold.photo/1024x732.jpg" alt="cutest pup">
                     </div>
-                    <div class="secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, totam. Fugit consectetur suscipit sunt, dolor sapiente neque minima, totam itaque ab harum eum illo magni nisi mollitia culpa, odio deleniti?</div>
+                    <div class="secondary">
+                        <h4>What's On - Paired Programming</h4>
+                        <p class="tools">Tools Used</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, fugit, rem odio fugiat voluptates similique ipsam, quis ut nam illo possimus temporibus illum totam tenetur iste optio blanditiis est dolor?</p>
+                        <div class="btn-row">
+                            <a href="#" class="btn">View Live</a>
+                            <a href="https://github.com/LiYingCodes/WhatsOn" target="_blank" class="btn">Github</a>
+                        </div>
+                    </div>
                 </div>
+               
+                <div class="main__section--projects--project">
+                    <div class="secondary">
+                        <h4>Javascript Quiz</h4>
+                        <p class="tools">Tools Used</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, totam. Fugit consectetur suscipit sunt, dolor sapiente neque minima, totam itaque ab harum eum illo magni nisi mollitia culpa, odio deleniti?</p>
+                        <div class="btn-row">
+                            <a href="#" class="btn">View Live</a>
+                            <a href="https://github.com/LiYingCodes/Proj_3_Quiz" target="_blank" class="btn">Github</a>
+                        </div>
+                    </div>
+                    <div class="primary">
+                        <img src="http://codegold.photo/1024x732.jpg" alt="cutest pup">
+                    </div>                  
+                </div>    
            </div>
         </section>
         
         <section id="skills" class="main__section--skills">
             <div class="inner-wrapper">
-            <h3>Skills</h3>
-               <div class="main__section--skills--row">
+                <h3>Skills</h3>
+            </div>
+            <div class="inside-wrapper">
+                <div class="main__section--skills--row">
                    <div class="main__section--skills-icons"><!-- CSS3 -->
                         <i class="devicon-css3-plain colored"></i>
-                   </div>
+                    </div>
                     <div class="main__section--skills-icons"> <!-- JS -->
                         <i class="devicon-javascript-plain colored"></i>
                     </div>
@@ -107,9 +156,7 @@
                     <div class="main__section--skills-icons"><!-- HTML5 -->
                         <i class="devicon-html5-plain colored"></i>
                     </div>
-               </div>
-                <div class="main__section--skills--row">
-                    <div class="main__section--skills-icons"><!-- React -->
+                     <div class="main__section--skills-icons"><!-- React -->
                         <i class="devicon-react-original colored"></i>
                     </div>
                     <div class="main__section--skills-icons"> <!-- SASS -->
@@ -118,36 +165,64 @@
                     <div class="main__section--skills-icons"><!-- jQuery -->
                         <i class="devicon-jquery-plain colored"></i>
                     </div>
-                    <div class="main__section--skills-icons">
-                        <!-- jQuery -->
-                        <i class="devicon-jquery-plain colored"></i>
+                    <div class="main__section--skills-icons"><!-- git -->
+                        <i class="devicon-git-plain colored"></i>
                     </div>
-                   
+                    <div class="main__section--skills-icons"><!-- gulp -->
+                        <i class="devicon-gulp-plain colored"></i>
+                    </div>
+                    <div class="main__section--skills-icons"><!-- firebase -->
+                        <img src="Firebase_Logo_Logomark.svg">
+                    </div>
                 </div>
            </div>
         </section>
-        <section id="contact" class="main__section--contact"></section>
+
+
+        <section id="contact" class="main__section--contact">
+            <div class="inner-wrapper">
+                <h3>Contact Me</h3>
+                <div class="footer__intro">
+                    <div class="footer__intro--contact">
+                        <img src="logo2.png">
+                        <ul>
+                            <li>E-mail:
+                                <a href="mailto:hello@liyinglim.com" target="_blank">hello@liyinglim.com</a>
+                            </li>
+                            <li>Phone:
+                                <a href="tel:123 456 789">(123) 456 789</a>
+                            </li>
+                        </ul>
+                        <div class="footer__intro--contact--icon-container">
+                            <i class="fab fa-linkedin-in"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-github-alt"></i>
+                        </div>
+                    </div>
+
+                    <form action="" class="footer__intro--form">
+                        <label for="name">Name: </label>
+                        <input type="text" value="name" placeholder="Name">
+
+                        <label for="email">E-mail: </label>
+                        <input type="text" value="email" placeholder="E-mail">
+
+                        <label for="comments">Leave me a message!</label>
+                        <textarea rows="10" placeholder="Type message here!"></textarea>
+                        <input type="submit" value="Send!">
+                    </form>
+                </div>
+                <div class="chevron"><a href="#home"><i class="fas fa-angle-double-up fa-10x"></i></a></div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer__intro">
-            <div class="footer__intro--form">
-                <h3>Contact Me</h3>
-            </div>
-            <div class="footer__intro--contact">
-                <ul>
-                    <li><a href="">hello@liyinglim.com</a></li>
-                    <li><a href="">phone number</a></li>
-                </ul>
-                <div class="footer__intro--icon-container">
-                    <i class="fab fa-linkedin-in"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-github-alt"></i>
-                </div>
-            </div>
+    <footer id="footer">
+        <div class="inner-wrapper">
+            <p>Li Ying Lim &copy; 2018</>
         </div>
     </footer>
-
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
     <script src="public/scripts/site.js"></script>
 </body>
 </html>

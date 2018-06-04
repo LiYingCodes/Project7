@@ -11,31 +11,51 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    @include font-size(16);
-    line-height: 2;
+    @include font-size(18);
+        line-height: 2;
 }
 
 h1, h2 {
-    line-height: 1;
-    letter-spacing: -3px;
+    line-height: 1.2;
     margin: 10px 0;
     padding: 10px 0;
+    text-transform: uppercase;
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
     @include font-size(100);
-
+    font-weight: 400;
+    @media (max-width: 360px) {
+        @include font-size(70);   
+    }
 }
 
 h2 {
-    @include font-size(60);
-    text-transform: uppercase;
-    line-height: 1;
+    @include font-size(50);
+    font-weight: 400;
+    @media (max-width: 360px) {
+        @include font-size(40);   
+    }
 }
 
 h3 {
     @include font-size(48);
+    position:relative;
+
+    @media (max-width: 360px) {
+        @include font-size(30);   
+    }
+}
+
+
+h3::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;    
+    content:"\f245";
+    color: $accent;
+    position: absolute;
+    padding-left: 10px;
 }
 
 nav {
@@ -45,6 +65,19 @@ nav {
     }
 }
 
+p {
+    padding: 0 25px;
+}
+
+a,
+a:active, 
+a:visited {
+    color: inherit;
+}
+span.emphasis {
+    color: $accent;
+    font-weight:700;
+}
 .accent {
     color: $accent;
 }
