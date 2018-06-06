@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="public/styles/style.css">
     <link rel="stylesheet" 
         href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" 
         integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" 
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Poppins" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="public/scripts/aos/dist/aos.css"/>
+    <link rel="icon" href="assets/logo.png">
+    <link rel="stylesheet" href="public/styles/style.css">
         
 
     <title>Li Ying Lim</title>
@@ -20,16 +22,20 @@
         <nav class="header__nav">
             <div class="wrapper">
                 <div class="header__nav--logo">
-                    <a href="#home"><img src="logo.png" alt=""></a>
+                    <a href="#home"><img src="/assets/logo.png" alt=""></a>
                 </div>
-                <div class="header__nav--links">
-                    <ul class="dropdown">
-                        <li><a href="#about">About Me</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="header__nav--responsive" >
+                <ul class="dropdown header__nav--links">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <!-- <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li> -->
+                </ul>
+                <div class="header__nav--responsive-nav" >
                     <i class="fas fa-bars fa-10x" id="menu"></i>
                     <i class="fas fa-times fa-10x" id="close"></i>
                 </div>
@@ -37,15 +43,20 @@
         </nav>
         <div class="header__intro inner-wrapper">
             <div class="header__intro--text">
-                <h1><span class="emphasis">Li Ying</span>Lim</h1>
+                <h1><span class="emphasis">Li Ying </span>Lim</h1>
                 <h2>Front-end web developer</h2>
             </div>
             <div class="header__intro--icon-container">
-                <i class="fab fa-linkedin-in"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-github-alt"></i>
+                <a href="https://www.linkedin.com/in/li-yinglim/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/LiYingCodes"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/LiYingCodes"><i class="fab fa-github-alt"></i></a>
             </div>
-            <div class="chevron"><a href="#about"><i class="fas fa-angle-double-down fa-10x"></i></a></div>
+            <div class="chevron">
+                <a href="#about">
+                    <span class="chevron--text">Continue </span>
+                    <i class="fas fa-angle-double-down fa-10x"></i>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -55,7 +66,7 @@
                 <h3>About Me</h3>
                 <div class="main__section--about">
                     <div class="main__section--about--img">
-                        <img src="2018-spring-li-ying-lim-3_EDIT_SQ.jpg" alt="">
+                        <img src="/assets/2018-spring-li-ying-lim-3_EDIT_SQ.jpg" alt="">
                     </div>
                     <div class="main__section--about--intro">
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero maxime delectus veniam consectetur architecto numquam aut officia nihil perspiciatis iste?</>
@@ -74,65 +85,79 @@
            <div class="inner-wrapper">
                 <h3>Projects</h3>
                 <div class="main__section--projects--project">
-                    <div class="primary">
-                        <img src="http://codegold.photo/1024x732.jpg" alt="cutest pup">
+                    <div class="primary" data-aos="fade-up-right">
+                        <img src="/assets/todoapp.jpeg" alt="mockup of project">
                     </div>
-                    <div class="secondary"> 
-                        <h4>To Do App - React Project</h4>
-                        <p class="tools">Tools Used</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit tempore corporis facere illum nostrum, sed, amet, facilis animi velit architecto aliquid quidem placeat? Corporis consectetur nisi magni minus aliquam est.</p>
+                    <div class="secondary" data-aos="fade-up-left"> 
+                        <h4>To Do App</h4>
+                        <h5>[React Web Application]</h5>
+                        <p class="tools"> React.js // Firebase // HTML // CSS </p>
+                        <p>
+                            "Now or Later?" is my first project created using React and Firebase. This web app sorts tasks into two categories - "now" (important) and "later" (less important) based on user input of task and importance.
+                        </p>
                         <div class="btn-row">
-                            <a href="#" class="btn">View Live</a>
-                            <a href="https://github.com/LiYingCodes/to-do-app" target="_blank" class="btn">Github</a>
+                            <a href="https://to-do-app-d86cc.firebaseapp.com/" class="btn">View Live</a>
+                            <a href="https://github.com/LiYingCodes/to-do-app" target="_blank" class="btn">View Code</a>
                         </div>
+                    </div>
+                </div>
+
+                <div class="main__section--projects--project">
+                    <div class="primary responsive-show-image" data-aos="fade-up-left">
+                        <img src="/assets/marvel.jpeg" alt="mockup of project">
+                    </div>
+                    <div class="secondary" data-aos="fade-up-right">
+                        <h4>Marvel Comic Finder </h4>
+                        <h5>[Agency API Project]</h5>
+                        <p class="tools">Marvel API // React.js // Firebase // HTML // CSS</p>
+                        <p>
+                            Our team of 3 devAvengers were given an agency task to creat a web application that interacts with Marvel API. The goal was to let the user search for a comic based on comic or character. Then, at the results page, the user is able to either save the comic or save the series to their user-specific collection.
+                        </p>
+                        <div class="btn-row">
+                            <a href="https://devavengers-f4922.firebaseapp.com/" class="btn">View Live</a>
+                            <a href="https://github.com/LiYingCodes/devAvengers" target="_blank" class="btn">View Code</a>
+                        </div>
+                        </div>
+                    <div class="primary responsive-hide-image" data-aos="fade-up-left">
+                        <img src="/assets/marvel.jpeg" alt="mockup of project">
                     </div>
                     
                 </div>
 
                 <div class="main__section--projects--project">
-                    <div class="secondary">
-                        <h4>Marvel API - Group React Project</h4>
-                        <p class="tools">Tools Used</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, totam. Fugit consectetur suscipit sunt, dolor
-                            sapiente neque minima, totam itaque ab harum eum illo magni nisi mollitia culpa, odio deleniti?</p>
-                        <div class="btn-row">
-                            <a href="#" class="btn">View Live</a>
-                            <a href="https://github.com/LiYingCodes/devAvengers" target="_blank" class="btn">Github</a>
-                        </div>
-                        </div>
-                    <div class="primary">
-                        <img src="http://codegold.photo/1024x732.jpg" alt="cutest pup">
+                    <div class="primary" data-aos="fade-up-right">
+                        <img src="/assets/whatson.jpeg" alt="mockup of project">
                     </div>
-                    
-                </div>
-
-                <div class="main__section--projects--project">
-                    <div class="primary">
-                        <img src="http://codegold.photo/1024x732.jpg" alt="cutest pup">
-                    </div>
-                    <div class="secondary">
-                        <h4>What's On - Paired Programming</h4>
-                        <p class="tools">Tools Used</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, fugit, rem odio fugiat voluptates similique ipsam, quis ut nam illo possimus temporibus illum totam tenetur iste optio blanditiis est dolor?</p>
+                    <div class="secondary" data-aos="fade-up-left">
+                        <h4>What's On </h4>
+                        <h5>[API Web Application]</h5>
+                        <p class="tools">MovieDB API // jQuery // HTML // CSS</p>
+                        <p>Paired programming project that suggests TV shows based on user input of genre and year. The web application interacts with MovieDB API. If the user does not like the selection given, another option to search for similar TV shows is made available.</p>
                         <div class="btn-row">
-                            <a href="#" class="btn">View Live</a>
-                            <a href="https://github.com/LiYingCodes/WhatsOn" target="_blank" class="btn">Github</a>
+                            <a href="https://liyingcodes.github.io/WhatsOn/" class="btn">View Live</a>
+                            <a href="https://github.com/LiYingCodes/WhatsOn" target="_blank" class="btn">View Code</a>
                         </div>
                     </div>
                 </div>
                
                 <div class="main__section--projects--project">
-                    <div class="secondary">
-                        <h4>Javascript Quiz</h4>
-                        <p class="tools">Tools Used</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, totam. Fugit consectetur suscipit sunt, dolor sapiente neque minima, totam itaque ab harum eum illo magni nisi mollitia culpa, odio deleniti?</p>
+                    <div class="primary responsive-show-image" data-aos="fade-up-left">
+                        <img src="/assets/bearquiz.png" alt="mockup of project">
+                    </div>
+                    <div class="secondary" data-aos="fade-up-right">
+                        <h4>Bear Quiz </h4> 
+                        <h5>[jQuery Interactive Site]</h5>
+                        <p class="tools">jQuery // HTML // CSS </p>
+                        <p>
+                            This quiz was created using the jQuery Javascript library. This is an interactive, just-for-fun quiz that tells the user what kind of bear they would be based on user input! Users can then share the quiz on Twitter!
+                        </p>
                         <div class="btn-row">
-                            <a href="#" class="btn">View Live</a>
-                            <a href="https://github.com/LiYingCodes/Proj_3_Quiz" target="_blank" class="btn">Github</a>
+                            <a href="https://liyingcodes.github.io/Proj_3_Quiz/" class="btn">View Live</a>
+                            <a href="https://github.com/LiYingCodes/Proj_3_Quiz" target="_blank" class="btn">View Code</a>
                         </div>
                     </div>
-                    <div class="primary">
-                        <img src="http://codegold.photo/1024x732.jpg" alt="cutest pup">
+                    <div class="primary responsive-hide-image" data-aos="fade-up-left">
+                        <img src="/assets/bearquiz.png" alt="mockup of project">
                     </div>                  
                 </div>    
            </div>
@@ -143,39 +168,65 @@
                 <h3>Skills</h3>
             </div>
             <div class="inside-wrapper">
-                <div class="main__section--skills--row">
+                <div class="main__section--skills--row responsive-hide-skills">
                    <div class="main__section--skills-icons"><!-- CSS3 -->
                         <i class="devicon-css3-plain colored"></i>
-                    </div>
-                    <div class="main__section--skills-icons"> <!-- JS -->
-                        <i class="devicon-javascript-plain colored"></i>
-                    </div>
-                    <div class="main__section--skills-icons"><!-- Github -->
-                        <i class="devicon-github-plain colored"></i>
-                    </div>
-                    <div class="main__section--skills-icons"><!-- HTML5 -->
-                        <i class="devicon-html5-plain colored"></i>
-                    </div>
-                     <div class="main__section--skills-icons"><!-- React -->
-                        <i class="devicon-react-original colored"></i>
+                        <span class="main__section--skills-text">CSS</span>
                     </div>
                     <div class="main__section--skills-icons"> <!-- SASS -->
                         <i class="devicon-sass-original colored"></i>
+                        <span class="main__section--skills-text">SASS</span>
+                    </div>
+                    <div class="main__section--skills-icons"><!-- HTML5 -->
+                        <i class="devicon-html5-plain colored"></i>
+                        <span class="main__section--skills-text">HTML5</span>
+                    </div>
+                    <div class="main__section--skills-icons"> <!-- JS -->
+                        <i class="devicon-javascript-plain colored"></i>
+                        <span class="main__section--skills-text">JavaScript</span>
                     </div>
                     <div class="main__section--skills-icons"><!-- jQuery -->
                         <i class="devicon-jquery-plain colored"></i>
-                    </div>
-                    <div class="main__section--skills-icons"><!-- git -->
-                        <i class="devicon-git-plain colored"></i>
-                    </div>
-                    <div class="main__section--skills-icons"><!-- gulp -->
-                        <i class="devicon-gulp-plain colored"></i>
+                        <span class="main__section--skills-text">jQuery</span>
+                    </div>                    
+                    <div class="main__section--skills-icons"><!-- React -->
+                        <i class="devicon-react-original colored"></i>
+                        <span class="main__section--skills-text">React</span>
                     </div>
                     <div class="main__section--skills-icons"><!-- firebase -->
-                        <img src="Firebase_Logo_Logomark.svg">
+                        <img src="assets/Firebase_Logo_Logomark.svg">
+                        <span class="main__section--skills-text">Firebase</span>
                     </div>
+                     <div class="main__section--skills-icons"><!-- Github -->
+                        <i class="devicon-github-plain colored"></i>
+                        <span class="main__section--skills-text">Github</span>
+                    </div>
+                    <div class="main__section--skills-icons">
+                        <!-- gulp -->
+                        <i class="devicon-gulp-plain colored"></i>
+                        <span class="main__section--skills-text">Gulp</span>
+                    </div>                    
+                    <div class="main__section--skills-icons"><!-- git -->
+                        <i class="devicon-git-plain colored"></i>
+                        <span class="main__section--skills-text">Git</span>
+                    </div>                    
                 </div>
+                <div class="main__section--skills--row responsive-show-skills">
+                <ul>
+                    <li><i class="devicon-css3-plain colored"></i> CSS3</li>
+                    <li><i class="devicon-sass-original colored"></i> SASS</li>
+                    <li><i class="devicon-html5-plain colored"></i> HTML5 </li>
+                    <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
+                    <li><i class="devicon-jquery-plain colored"></i> jQuery</li>
+                    <li><i class="devicon-react-original colored"></i> React</li>
+                    <li><img src="assets/Firebase_Logo_Logomark.svg"> Firebase</li>
+                    <li><i class="devicon-github-plain colored"></i> Github</li>
+                    <li><i class="devicon-gulp-plain colored"></i> Gulp</li>
+                    <li><i class="devicon-git-plain colored"></i> Git</li>
+                </ul>
+            </div>
            </div>
+            
         </section>
 
 
@@ -184,45 +235,57 @@
                 <h3>Contact Me</h3>
                 <div class="footer__intro">
                     <div class="footer__intro--contact">
-                        <img src="logo2.png">
-                        <ul>
-                            <li>E-mail:
-                                <a href="mailto:hello@liyinglim.com" target="_blank">hello@liyinglim.com</a>
-                            </li>
-                            <li>Phone:
-                                <a href="tel:123 456 789">(123) 456 789</a>
-                            </li>
-                        </ul>
-                        <div class="footer__intro--contact--icon-container">
+                        <a href="mailto:hello@liyinglim.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:6477865671">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/li-yinglim/">
                             <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com/LiYingCodes">
                             <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://github.com/LiYingCodes">
                             <i class="fab fa-github-alt"></i>
-                        </div>
+                        </a>
                     </div>
 
-                    <form action="" class="footer__intro--form">
+                    <form action="http://www.focuspocus.io/magic/c46b1da0a3fdeb22975537456b418cb1" method="POST" class="footer__intro--form">
                         <label for="name">Name: </label>
-                        <input type="text" value="name" placeholder="Name">
+                        <input type="text" value="name" placeholder="Name" name="name">
 
                         <label for="email">E-mail: </label>
-                        <input type="text" value="email" placeholder="E-mail">
+                        <input type="text" value="email" placeholder="E-mail" name="email">
 
                         <label for="comments">Leave me a message!</label>
-                        <textarea rows="10" placeholder="Type message here!"></textarea>
+                        <textarea rows="10" placeholder="Type message here!" name="comments"></textarea>
                         <input type="submit" value="Send!">
                     </form>
                 </div>
-                <div class="chevron"><a href="#home"><i class="fas fa-angle-double-up fa-10x"></i></a></div>
             </div>
         </section>
     </main>
 
     <footer id="footer">
-        <div class="inner-wrapper">
-            <p>Li Ying Lim &copy; 2018</>
+        <div class="chevron">
+            <a href="#home"> 
+                <span class="chevron--text">Home </span>
+                <i class="fas fa-angle-double-up fa-10x"></i>
+            </a>
+        </div>
+        <div class="inner-wrapper clearfix">
+            <p>Li Ying Lim &copy; 2018</p> 
+            <p>Photo credits: 
+                <a href="https://pamlau.com/" target="_blank">Pam Lau</a> |
+                <a href="www.madebykirill.com" target="_blank">Kirill</a> |
+                <a href="https://unsplash.com/@scottwebb"target="_blank">Scott Webb</a>
+            </p>
         </div>
     </footer>
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script src="public/scripts/aos/dist/aos.js"></script>
     <script src="public/scripts/site.js"></script>
 </body>
 </html>

@@ -2,8 +2,9 @@
 
 $accent: #2bdad3;
 $text: #2b2e2f;
-$subheader:#f5f7f8;
 $paragraph: #717779;
+$gray: #717779;
+$background:#f8f8f8;
 
 html {
     font-size: 62.5%;
@@ -13,6 +14,16 @@ body {
     font-family: 'Poppins', sans-serif;
     @include font-size(18);
         line-height: 2;
+    }
+
+a,
+a:active, 
+a:visited {
+    color: inherit;
+}
+
+.accent {
+    color: $accent;
 }
 
 h1, h2 {
@@ -20,31 +31,74 @@ h1, h2 {
     margin: 10px 0;
     padding: 10px 0;
     text-transform: uppercase;
+    @media (max-height: 414px) and (orientation: landscape),
+    (max-height: 320px) and (orientation: landscape)  {
+        margin: 0 auto; 
+        padding:0;   
+    }
+    @media (max-height: 384px) and (orientation: landscape) {
+        margin: 10px 0; 
+        padding:10px 0;   
+    }
+    @media (max-height: 320px) and (orientation: landscape) {
+        margin: 3px 0; 
+        padding:3px 0;
+    }
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
     @include font-size(100);
-    font-weight: 400;
-    @media (max-width: 360px) {
+    font-weight: 700;
+    @media (max-width: 900px) {
+        @include font-size(90);
+    } 
+    @media (max-width: 384px),
+     (max-width: 412px) and (orientation: portrait),
+     (max-height: 414px) and (orientation: landscape) {
         @include font-size(70);   
     }
+    @media (max-width: 320px) and (orientation: portrait),
+    (max-height: 320px) and (orientation: landscape) {
+        @include font-size(67);
+    }
+}
+
+span.emphasis {
+    color: $accent;
+    font-weight:700;
 }
 
 h2 {
     @include font-size(50);
-    font-weight: 400;
-    @media (max-width: 360px) {
+        font-weight: 400;
+    
+    @media (max-width: 900px) {
+        @include font-size(45);
+    } 
+    @media (max-width: 384px),
+     (max-width: 412px) and (orientation: portrait),
+     (max-height: 414px) and (orientation: landscape) {
         @include font-size(40);   
+    }
+    @media (max-width: 320px) and (orientation: portrait),
+    (max-height: 320px) and (orientation: landscape)  {
+        @include font-size(37);
     }
 }
 
 h3 {
     @include font-size(48);
-    position:relative;
+        position:relative;
+    @media (max-width: 900px) {
+        text-align: center;
+        @include font-size(40);
+    }  
 
-    @media (max-width: 360px) {
-        @include font-size(30);   
+    @media (max-width: 384px) {
+        @include font-size(35); 
+        margin: 0 auto;
+        padding: 25px;
     }
 }
 
@@ -58,28 +112,97 @@ h3::after{
     padding-left: 10px;
 }
 
-nav {
-    @include font-size(22);
-    a{
-        color: inherit;
+h4 {
+    @include font-size(28);
+    color: $accent;
+    margin: 0 auto;
+    margin-top: 15px;
+    @media (max-width: 900px) {
+        text-align: center;
+        @include font-size(26);
+    }  
+
+    @media (max-width: 384px) {
+        @include font-size(20); 
     }
 }
 
-p {
-    padding: 0 25px;
+h5 {
+    @include font-size(24);
+    color: $gray;   
+    margin: 0 auto;
+    @media (max-width: 900px) {
+        text-align: center;
+        @include font-size(20);
+    }  
+    @media (max-width: 384px) {
+        @include font-size(18); 
+    }
 }
 
-a,
-a:active, 
-a:visited {
-    color: inherit;
+.tools {
+    text-align: right;
+    @media (max-width: 900px) {
+        text-align:center;
+    }
 }
-span.emphasis {
-    color: $accent;
-    font-weight:700;
+
+.btn-row{
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    @media (max-width: 900px) {
+        justify-content: center;
+    }
+    @media (max-width: 600px) {
+        flex-direction:column;
+        
+    }
+    .btn {
+        padding: 10px 25px;
+        margin: 0 10px;
+        border: 1px solid $gray;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 2px 2px 0 $text;
+        text-align: center;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+            background: lighten($accent, 15%);
+            color: $background;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            margin: 15px 0;
+            padding:0;
+        }
+
+    }
 }
-.accent {
-    color: $accent;
+
+.header__nav {
+    @include font-size(22);
+    &--links li a {
+        color: inherit;
+        text-decoration: none;
+        padding: 0 15px;
+        &:hover {
+            border-top: 4px solid $accent;
+            border-bottom: 4px solid $accent;
+        }
+    }
+    @media (max-width: 384px) {
+        @include font-size(20);   
+    }
+}
+
+.responsive-show-skills{
+    li{
+        @include font-size(30);
+        text-align: left;
+        border-bottom: 1px dotted $accent;
+    }
 }
 
 
