@@ -12,19 +12,35 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
+    line-height: 2;
     @include font-size(18);
-        line-height: 2;
 
-    @media (max-height: 638px) {
+    @media (max-width: 414px) {
         @include font-size(16);
     }
 }
     
-
 a,
 a:active, 
 a:visited {
     color: inherit;
+    text-decoration: none;
+}
+
+.links {
+    &::after {
+        content: '';
+        display: block;
+        width: 15%;
+        height: 3px;
+        background:$accent;
+        transition: all 0.3s ease-in;
+    }
+
+    &:hover::after, 
+    &:focus::after {
+        width: 100%;
+    }
 }
 
 .accent {
@@ -36,18 +52,11 @@ h1, h2 {
     margin: 10px 0;
     padding: 10px 0;
     text-transform: uppercase;
-    @media (max-height: 414px) and (orientation: landscape),
-    (max-height: 320px) and (orientation: landscape)  {
-        margin: 0 auto; 
-        padding:0;   
-    }
-    @media (max-height: 384px) and (orientation: landscape) {
-        margin: 10px 0; 
-        padding:10px 0;   
-    }
-    @media (max-height: 320px) and (orientation: landscape) {
-        margin: 3px 0; 
-        padding:3px 0;
+}
+
+h1, h2, h3, h4, h5 {
+    @media (max-width: 900px) {
+        text-align: center;
     }
 }
 
@@ -55,20 +64,15 @@ h1 {
     font-family: 'Oswald', sans-serif;
     @include font-size(100);
     font-weight: 700;
-    @media (max-width: 900px) {
-        @include font-size(90);
-    } 
-    @media (max-width: 384px),
-     (max-width: 412px) and (orientation: portrait),
-     (max-height: 414px) and (orientation: landscape) {
+
+    @media (max-width: 414px),
+    (max-width: 320px) and (orientation: portrait),
+    (max-height: 600px) and (orientation: landscape) {
         @include font-size(70);   
     }
-    @media (max-width: 320px) and (orientation: portrait),
-    (max-height: 320px) and (orientation: landscape){
-        @include font-size(67);
-    }
-    @media (max-height: 638px) {
-        @include font-size(65);
+    @media (max-height: 360px) and (orientation: landscape) { 
+        @include font-size(55);
+        margin: 0 auto;
     }
 }
 
@@ -81,42 +85,29 @@ h2 {
     @include font-size(50);
         font-weight: 400;
     
-    @media (max-width: 900px) {
-        @include font-size(45);
-    } 
-    @media (max-width: 384px),
-     (max-width: 412px) and (orientation: portrait),
-     (max-height: 414px) and (orientation: landscape) {
-        @include font-size(40);   
+    @media (max-width: 414px),
+     (max-width: 320px) and (orientation: portrait),
+     (max-height: 414px) and (orientation: landscape),
+     (max-height: 600px) and (orientation: landscape) {
+        @include font-size(30);   
     }
-    @media (max-width: 320px) and (orientation: portrait),
-    (max-height: 320px) and (orientation: landscape)  {
-        @include font-size(37);
-    }
-    @media (max-height: 638px) {
-        @include font-size(30);
+    @media (max-height: 360px) and (orientation: landscape) { 
+        @include font-size(25);
+        margin: 0 auto;
     }
 }
 
 h3 {
-    @include font-size(48);
+    @include font-size(45);
         position:relative;
-    @media (max-width: 900px) {
-        text-align: center;
-        @include font-size(40);
-    }  
-
-    @media (max-width: 384px) {
+    @media (max-width: 414px),
+    (max-width: 320px) and (orientation: portrait) {
         @include font-size(35); 
-        margin: 0 auto;
-        padding: 25px;
     }
-
-     @media (max-height: 638px) {
-        @include font-size(28);
+    @media (max-height: 360px) and (orientation: landscape) { 
+        @include font-size(30);
     }
 }
-
 
 h3::after{
     font-family: "Font Awesome 5 Free";
@@ -132,32 +123,21 @@ h4 {
     color: $accent;
     margin: 0 auto;
     margin-top: 15px;
-    @media (max-width: 900px) {
-        text-align: center;
-        @include font-size(26);
-    }  
 
-    @media (max-width: 384px) {
-        @include font-size(20); 
-    }
-    @media (max-height: 638px) {
-        @include font-size(24);
+    @media (max-width: 414px),
+    (max-width: 320px) and (orientation: portrait) {
+        @include font-size(24); 
     }
 }
 
 h5 {
-    @include font-size(24);
+    @include font-size(22);
     color: $gray;   
     margin: 0 auto;
-    @media (max-width: 900px) {
-        text-align: center;
-        @include font-size(20);
-    }  
-    @media (max-width: 384px) {
+
+    @media (max-width: 414px),
+    (max-width: 320px) and (orientation: portrait) {
         @include font-size(18); 
-    }
-    @media (max-height: 638px) {
-        @include font-size(16);
     }
 }
 
@@ -177,23 +157,28 @@ h5 {
     }
     @media (max-width: 600px) {
         flex-direction:column;
-        
+            .links {
+            &::after {
+                content: '';
+                display: block;
+                width: 10%;
+                height: 3px;
+                background:$accent;
+                transition: all 0.3s ease-in;
+                position: absolute;
+                left: 37%;
+            }
+
+            &:hover::after, 
+            &:focus::after {
+                width: 30%;
+            }
+        }           
     }
     .btn {
         padding: 10px 25px;
         margin: 0 10px;
-        border: 1px solid $gray;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 2px 2px 0 $text;
         text-align: center;
-        text-decoration: none;
-        &:hover,
-        &:focus {
-            background: lighten($accent, 15%);
-            color: $background;
-            transform: scale(1.05);
-        }
-
         @media (max-width: 600px) {
             margin: 15px 0;
             padding:0;
@@ -208,28 +193,25 @@ h5 {
         color: inherit;
         text-decoration: none;
         padding: 0 15px;
-        &:hover {
-            border-top: 4px solid $accent;
-            border-bottom: 4px solid $accent;
-        }
-    }
-    @media (max-width: 384px) {
-        @include font-size(20);   
-    }
-
-    @media (max-height: 638px) {
-        @include font-size(18);
     }
 }
 
 .responsive-show-skills{
     li{
-        @include font-size(30);
+        @include font-size(28);
         text-align: left;
         border-bottom: 1px dotted $accent;
-            @media (max-height: 638px) {
-            @include font-size(24);
+        @media (max-width: 414px),
+        (max-height: 360px) and (orientation: landscape) {
+            @include font-size(22);
         }
+    }
+}
+
+.chevron {
+    @include font-size(3);
+    &--text {
+        @include font-size(22);
     }
 }
 

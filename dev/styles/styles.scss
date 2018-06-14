@@ -28,65 +28,45 @@ $white: #fff;
 }
 
 .inner-wrapper{
-    max-width: 1400px;
+    max-width: 80%;
     margin: 0 auto;
     padding: 50px 0;
 }
 
-.header__intro.inner-wrapper{
-    @media (max-width: 414px) {
-        margin: 25% auto; 
-        padding:0;   
-    }
-    @media (max-height: 320px) and (orientation: landscape){
-        margin: 0 auto; 
-    }
+.inner-wrapper.skills {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 0 10%;
+    padding-bottom: 50px;
 }
 
-.inside-wrapper{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 100px;
+.inner-wrapper.skill-header {
+    padding: 0;
 }
+
 
 .chevron {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    @include font-size(6);
-    margin-right: 20px;
+    display: block;
+    width: 100%;
+    text-align: right;
+    @media (max-width: 1200px) {
+            text-align: center;
+            margin: 0 auto;  
+        }
+
     a {
-        text-decoration: none;
+        transition: all 0.3s ease-in-out;
         &:hover{
             color:$accent;
         }
     }
-    @media (max-width: 384px) {
-        @include font-size(4);   
-    }
-
-    @media (max-width: 412px) and (orientation: portrait), 
-    (max-height: 414px) and (orientation: landscape), (max-height: 638px) {
-       @include font-size(2.5);
-    }
-    
-}
-.chevron--text{
-    @include font-size(30);
-    text-decoration: none;
-    @media (max-width: 412px) and (orientation: portrait),(max-height: 414px) and (orientation: landscape), (max-height: 638px) {
-       @include font-size(26);
-    }
 }
 
-.footer {
+
+
+.footer .inner-wrapper {
     .chevron {
-        position:absolute;
-        bottom: 0;
-            @media (max-width: 500px), (max-height: 638px){
-                bottom: 46%;
-            }
-            
+        text-align: right;  
         a {
             &:hover{
                 color:$background;
@@ -95,8 +75,6 @@ $white: #fff;
     }
 }
 
-
-
 body {
     background: $background;
     color: $text;
@@ -104,7 +82,6 @@ body {
 // END OF GENERAL STYLES
 
 .header {
-    position: relative;
     background:
     linear-gradient(to bottom, rgba(255, 255, 255, 0) 45%,
       rgba(248, 248, 248, 1)), url('/assets/scott-webb-272211-unsplash.jpg');
@@ -112,36 +89,30 @@ body {
     background-repeat: no-repeat;
     height: 100vh; 
 
+
     &__intro {
-        @media (max-width: 1280px) {
-            margin: 20% auto;  
-            padding: 0; 
+        margin: 20% auto;  
+        padding: 0; 
+
+        @media (max-height: 800px) and (orientation: landscape) {
+            margin: 0 auto;
+            margin-top: 100px;
         }
 
-        @media (max-width: 800px) and (orientation: portrait) {
-            margin: 50% auto;  
+        @media (max-height: 360px) and (orientation: landscape),
+        (max-height: 414px) and (orientation: landscape) {
+            margin: 0 auto;  
+            margin-top: 20px;
         }
-
-        @media (max-width: 700px) {
-            margin: 30% auto;  
-        }
-
-        @media (max-width: 414px) and (orientation: portrait) {
-            margin: 20% auto;  
-        }
-
-        @media (max-width: 412px) and (orientation: portrait){
-            margin: 50% auto;
-        }
-
-        @media (max-height: 600px) and (orientation: landscape), (max-height: 638px){
-            margin: 7% auto;
+        
+         @media (max-width: 320px) and (orientation: portrait) {
+            margin: 0 auto;  
         }
 
         &--text{
             margin-top: 15%;
             margin-left: 100px;
-            @media (max-width: 700px) {
+            @media (max-width: 1200px) {
                 text-align: center;
                 margin: 0 auto;  
             }
@@ -149,7 +120,7 @@ body {
 
         &--icon-container {
             margin-left: 100px;
-            @media (max-width: 700px),
+            @media (max-width: 1200px),
             (max-width: 414px), 
             (max-height: 414px) and (orientation: landscape),
             (max-width:600px) and (orientation: portrait) {
@@ -169,44 +140,32 @@ body {
                 opacity: 0.7;
                 transition: all 0.3s ease-in-out;
                
-            &:hover, 
-            &:focus {
-                color: $accent;
-                border: 2px solid $accent;
-                opacity: 1;
-                transform: scale(1.1);
+                &:hover, 
+                &:focus {
+                    color: $accent;
+                    border: 2px solid $accent;
+                    opacity: 1;
+                    transform: scale(1.1);
+                    }
+                @media (max-height: 360px) and (orientation: landscape) { 
+                    margin: 10px;
+                    }
                 }
             }
         }
-    }
     &__nav {
         background: linear-gradient(rgba(255, 255, 255, 0.7)); 
-        // transition: all 0.3s ease-in-out;
         position: relative;
-        
-        @media (max-width: 700px) {
-            margin: 0;
-            padding: 0;
-        }
 
-        .wrapper {
+        .inner-wrapper {
             display:flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0;
         }
 
         &--logo {
             padding-top: 10px;
-            margin-left: 100px;
-            @media (max-width: 700px) {
-                margin:0;   
-            }
-
-            @media (max-width: 384px), 
-            (max-height: 414px) and (orientation: landscape),
-            (max-width:600px) and (orientation: portrait) {
-                margin-left: 20px;    
-            }
 
             img {
                 width: 100%;
@@ -223,20 +182,12 @@ body {
                 }
             }
 
-        &--logo, 
-        &--links li {
-            &:hover,
-            &:focus {
-                transform: scale(1.1);
-            }
-        }
-
         &--links.dropdown {
             list-style-type: none;
-            margin-right: 100px;
             display: flex; 
             justify-content: flex-end;
             align-items: center;
+            transition: all 0.8s ease-in-out;
             a {
                 display:block;
             }
@@ -251,17 +202,20 @@ body {
                 left: 0;
                 right:0;
                 text-align: center;
+                transition: all 0.3s ease-in-out;
                 li:hover,
                 li:focus {
                     background: lighten($accent, 20%);
                     margin: 0;
                     padding: 0;
-                    text-decoration:none;
-                    transform: scale(1.1);
-                    a {
-                        border:none;
+                }
+                .links {
+                    &::after {
+                        content: '';
+                        display: none;
                     }
                 }
+                
                 @media (max-width: 414px) {
                     top: 65%;
                 }
@@ -286,16 +240,13 @@ body {
         
         &--responsive-nav {
             display:none;
-                @media (max-width: 700px),  (max-height: 414px) and (orientation: landscape) {
-                    display:block;
-                }                       
+            @media (max-width: 700px),  (max-height: 414px) and (orientation: landscape) {
+                display:block;
+            }                       
+            
             i {
                 color: $accent;
                 display: block;
-                &:hover,
-                &:focus {
-                    transform: scale(1.1);
-                }
             }
 
             #menu {
@@ -482,7 +433,7 @@ body {
     }
 
     &-icons{
-        border: 1px dotted $accent;
+        border: 1px solid $accent;
         background: white;
         box-shadow: 0 4px 0 $accent;
         font-size: 100px;
@@ -493,12 +444,6 @@ body {
         transition: all 0.3s ease-in-out;
         position: relative;
 
-        // &:hover,
-        // &:focus {
-        //     opacity: 1;
-        //     border: 1px solid $accent;
-        //     transform: scale(1.1);
-        // }
         img{
             height: 100px;
             width: 100px;
@@ -580,10 +525,8 @@ body {
 
         &--form {
             width: 100%;
-            // align-self: center;
             margin: 0 auto;
             padding: 0;
-            // text-align: center;
             @media (max-width: 900px){
                 width: 100%;
             }
@@ -595,7 +538,7 @@ body {
                 width: 100%;
                 &:hover,
                 &:focus {
-                    border: 3px solid $accent;
+                    border-bottom: 3px solid $accent;
                 }
             }
 
@@ -606,6 +549,10 @@ body {
 
             textarea{
                 border: 2px solid $gray;
+                &:hover,
+                &:focus {
+                    border: 3px solid $accent;
+                }
             }
 
             input[placeholder], textarea[placeholder] {
@@ -634,18 +581,5 @@ body {
     margin: 0 auto;
     padding: 0;
     color: $accent;
-    position: relative;
-    .inner-wrapper {
-        padding:0;
-        p{
-            float: left;
-            margin:0;
-            padding:0;
-            text-align: left;
-            @media (max-width: 900px){
-                width: 100%;
-                display: block;
-            }
-        }
-    }
+    text-align: center;
 }
