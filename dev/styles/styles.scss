@@ -34,10 +34,20 @@ $white: #fff;
 }
 
 .inner-wrapper.skills {
-    max-width: 75%;
+    max-width: 90%;
     margin: 0 auto;
     padding: 0 10%;
     padding-bottom: 50px;
+    @media (max-width: 1500px) {
+        max-width: 90%;
+        padding:0 5%;
+        padding-bottom: 50px;
+    }
+    @media (max-width: 1200px) {
+        max-width: 100%;
+        padding:0 10%;
+        padding-bottom: 50px;
+    }
 }
 
 .inner-wrapper.skill-header {
@@ -48,12 +58,9 @@ $white: #fff;
 .chevron {
     display: block;
     width: 100%;
-    text-align: right;
-    @media (max-width: 1200px) {
-            text-align: center;
-            margin: 0 auto;  
-        }
-
+    text-align: center;
+    margin: 0 auto;  
+    padding-top: 15px;
     a {
         transition: all 0.3s ease-in-out;
         &:hover{
@@ -62,11 +69,8 @@ $white: #fff;
     }
 }
 
-
-
 .footer .inner-wrapper {
     .chevron {
-        text-align: right;  
         a {
             &:hover{
                 color:$background;
@@ -257,19 +261,16 @@ body {
                 }
                 @media (max-width: 530px),
                 (max-height: 414px) and (orientation: landscape), (max-height: 638px) {
-                    @include font-size(35);
-                    margin-right: 20px;
+                    @include font-size(35);   
                 }
-
             }
 
             #close {
                 display:none;
-                margin-right: 20px;
-                @include font-size(65);
+                @include font-size(60);
                 @media (max-width: 530px),
                 (max-height: 414px) and (orientation: landscape), (max-height: 638px)  {
-                    @include font-size(45);
+                    @include font-size(40);
                 }
             }          
         }
@@ -280,7 +281,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    @media (max-width: 1100px) {
+    @media (max-width: 1200px) {
         flex-direction: column;
         height: auto;
         align-items: center;
@@ -291,19 +292,49 @@ body {
     &--intro{
         width: 75%;
         margin: 0 auto;
-        padding: 0;
-        padding-bottom: 5px;
+        padding: 0 0 5px 50px;
+        @media (max-width: 1100px) {
+            width: 100%;
+            padding:0;
+        }
+
         h5, p {
             @media (max-width: 1100px) {
                 text-align: center;
             }
         }
     }
+
+    .riley {
+        // border-bottom: 3px solid $accent;
+        text-decoration: underline;
+        color: $accent;
+        position: relative;
+        &:hover img, 
+        &:focus img{
+            display:block;
+            position: absolute;
+            left: 100%;
+            top: 100%;
+        }
+        img {
+            display:none;
+            width: 100px;
+            height: 100px;
+            border-bottom: 2px solid $accent;
+            box-shadow: 2px 2px 2px $gray;
+        }
+    }
     &--img {
         width: calc(25% - 30px);
         margin: 0 15px;
         padding:0;
-            
+        
+        @media (max-width: 1200px) {
+           width: 55%;
+           padding-bottom: 15px;
+        }
+
         @media (max-width: 600px) {
            width: 50%;
            padding-bottom: 15px;
@@ -329,13 +360,13 @@ body {
 .main__section--projects {
     &--project {
         display: flex;
+        justify-content: flex-start;
+        align-items: center;
         width: 100%;
         padding: 0;
         padding-bottom: 50px;
         @media (max-width: 1200px) {
             flex-direction: column;
-        }
-        @media (max-width: 900px) {
             width: 100%;
             padding:0;
         }
@@ -346,26 +377,17 @@ body {
         }
 
         .primary {
-            width: 60%;
-            margin: 0 25px;
+            width: 45%;
+            margin: 0;
 
-            @media (max-width: 900px) {
-                width: 85%;
+            @media (max-width: 1200px) {
+                width: 100%;
                 margin: 0 auto;
                 padding: 0;
             }           
-            @media (max-width: 700px) {
-                width: 90%;
-            }
-            @media (max-width: 530px) {
-                width: 95%;
-            }
-            @media (max-width: 384px) {
-                width: 100%;
-            }
         }
         .secondary {
-            width: 40%;
+            width: 55%;
             margin: 15px auto;
             padding: 25px;
             background: $background;
@@ -379,6 +401,7 @@ body {
                 width: 100%;
                 padding: 0 25px 50px 25px;
                 margin-bottom: 50px;
+                text-align: center;
             }
         }
 
@@ -405,8 +428,11 @@ body {
     .responsive-show-skills{
         display:none;
         ul {
-            width: 100%;
+            width: 50%;
+            display: inline-block;
             list-style-type: none;  
+            margin: 0;
+            padding: 0;
         }
 
         i {
@@ -418,7 +444,12 @@ body {
         }
 
         @media (max-width: 900px) {
-            display:block;   
+            display: block;   
+            display: flex;
+            flex-direction: row;
+        }
+        @media (max-width: 500px) {
+            flex-direction: column;
         }
     }
 
@@ -430,9 +461,9 @@ body {
     }
 
     &-icons{
-        border: 1px solid $accent;
+        border-bottom: 4px solid $accent;
         background: white;
-        box-shadow: 0 4px 0 $accent;
+        box-shadow: 5px 5px 5px $gray;
         font-size: 100px;
         display: inline-block;
         padding: 0 50px;
@@ -459,6 +490,7 @@ body {
         right:0;
     }
 }
+
 
 .main__section--contact {
     color: $accent;
@@ -553,7 +585,7 @@ body {
             }
 
             input[placeholder], textarea[placeholder] {
-                color: $gray;
+                color: $accent;
                 text-transform: capitalize;
             }
 
@@ -568,8 +600,6 @@ body {
                     color: $text;
                 }
             }
-
-            
         }
     }
 }
@@ -579,4 +609,13 @@ body {
     padding: 0;
     color: $accent;
     text-align: center;
+    p {
+        padding:0;
+        margin:0;
+    }
+    a {
+        &:hover{
+            color:$background;
+        }
+    }
 }

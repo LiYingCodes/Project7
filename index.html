@@ -51,7 +51,7 @@
             </div>
             <div class="chevron">
                 <a href="#about">
-                    <span class="chevron--text">Continue</span>
+                    <!-- <span class="chevron--text">Continue</span> -->
                     <i class="fas fa-angle-double-down fa-10x"></i>
                 </a>
             </div>
@@ -67,11 +67,12 @@
                         <img src="/assets/2018-spring-li-ying-lim-3_EDIT_SQ.jpg" alt="">
                     </div>
                     <div class="main__section--about--intro">
-                        <h5>Hi! Im Li Ying, a front-end web developer based in Toronto.</h5>
-                        <p>I am fluent in two languages (English and Mandarin) and learning more. Currently I am learning JavaScript and Russian!</p>
-                        <p class="responsive-hide-intro">I love exploring and learning and as a result, my Bachelor of Science transcript boasts almost as many non-science courses as core courses plus a couple of real-world immersion experiences to boot!</p>
-                        <p class="responsive-hide-intro"> After university, I advised clients on personal finance at a bank but ultimately decided to switch tracks. I reflected on my dedication to coding projects and the rest is history! </p>
-                        <p>I've just graduated from HackerYou's highly selective immersive web development program and am so excited to continue growing my skills as a developer.</p>
+                        <h5>Hi! Im Li Ying, a bilingual front-end web developer based in Toronto.</h5>
+                        <p><span class="responsive-hide-intro">I just graduated from the highly selective Web Development Immersive program at the HackerYou College of Technology. </span> I love anything that pushes me to continuously improve myself and my skills, which is one of the many reasons I enjoy coding!  
+                                                    
+                        <p>Besides coding, you will likely find me annoying my cat <span class="riley"><img src="assets/riley.jpg">Riley</img></span>, exploring cultural and food festivals around the city or trying my hand at something new. Right now that is learning Russian, putting a puzzle together and playing co-op video games!</p>
+                        
+                        </p>
                     </div>
                 </div>
             </div>
@@ -82,6 +83,27 @@
            <div class="inner-wrapper">
                 <h3>Projects</h3>
                 <div class="main__section--projects--project">
+                    <div class="primary responsive-show-image" data-aos="fade-up-left">
+                        <img src="/assets/social-r-us.jpg" alt="mockup of project">
+                    </div>
+                    <div class="secondary" data-aos="fade-up-right">
+                        <h4>Social-R-Us</h4>
+                        <h5>[API Web Application]</h5>
+                        <p class="tools">Reddit API // Giphy API // Pixabay API // React.js // HTML // CSS</p>
+                        <p>
+                            This web app was built using React and interacts with Reddit, Giphy and Pixabay API. The user can search all three sites easily from this web app! 
+                        </p>
+                        <div class="btn-row">
+                            <a href="https://socialrus-a69e9.firebaseapp.com" class="btn links" target="_blank">View Live</a>
+                            <a href="https://github.com/LiYingCodes/Social-R-Us" target="_blank" class="btn links">View Code</a>
+                        </div>
+                    </div>
+                    <div class="primary responsive-hide-image" data-aos="fade-up-left">
+                        <img src="assets/social-r-us.jpg" alt="mockup of project">
+                    </div>
+                </div>
+
+                <div class="main__section--projects--project">
                     <div class="primary" data-aos="fade-up-right">
                         <img src="/assets/todoapp.jpeg" alt="mockup of project">
                     </div>
@@ -90,7 +112,7 @@
                         <h5>[React Web Application]</h5>
                         <p class="tools"> React.js // Firebase // HTML // CSS </p>
                         <p>
-                            "Now or Later?" is my first project created using React and Firebase. This web app sorts tasks into two categories - "now" (important) and "later" (less important) based on user input of task and importance.
+                            "Now or Later?" was created using React and Firebase. This web app sorts tasks into two categories - "now" (important) and "later" (less important) based on user input of task and importance.
                         </p>
                         <div class="btn-row">
                             <a href="https://to-do-app-d86cc.firebaseapp.com/" class="btn links" target="_blank">View Live</a>
@@ -105,10 +127,10 @@
                     </div>
                     <div class="secondary" data-aos="fade-up-right">
                         <h4>Marvel Comic Finder </h4>
-                        <h5>[Agency API Project]</h5>
+                        <h5>[API Web Application]</h5>
                         <p class="tools">Marvel API // React.js // Firebase // HTML // CSS</p>
                         <p>
-                            Our team of 3 devAvengers were given an agency task to creat a web application that interacts with Marvel API. The goal was to let the user search for a comic based on comic or character. Then, at the results page, the user is able to either save the comic or save the series to their user-specific collection.
+                            This web app interacts with the Marvel API. The user can search for a comic based on title or character. Then, at the results page, if the user logs in, the user can either save the individual comic or save the comic series to their user-specific collection.
                         </p>
                         <div class="btn-row">
                             <a href="https://devavengers-f4922.firebaseapp.com/" class="btn links" target="_blank">View Live</a>
@@ -118,7 +140,6 @@
                     <div class="primary responsive-hide-image" data-aos="fade-up-left">
                         <img src="/assets/marvel.jpeg" alt="mockup of project">
                     </div>
-                    
                 </div>
 
                 <div class="main__section--projects--project">
@@ -129,7 +150,7 @@
                         <h4>What's On </h4>
                         <h5>[API Web Application]</h5>
                         <p class="tools">MovieDB API // jQuery // HTML // CSS</p>
-                        <p>Paired programming project that suggests TV shows based on user input of genre and year. The web application interacts with MovieDB API. If the user does not like the selection given, another option to search for similar TV shows is made available.</p>
+                        <p>This web app interacts with MovieDB API and suggests TV shows based on user input of genre and year. If the user does not like the selection given, another option to search for similar TV shows is presented.</p>
                         <div class="btn-row">
                             <a href="https://liyingcodes.github.io/WhatsOn/" class="btn links" target="_blank">View Live</a>
                             <a href="https://github.com/LiYingCodes/WhatsOn" target="_blank" class="btn links">View Code</a>
@@ -139,14 +160,13 @@
                
                 <div class="main__section--projects--project">
                     <div class="primary responsive-show-image" data-aos="fade-up-left">
-                        <img src="/assets/bearquiz.png" alt="mockup of project">
+                        <img src="/assets/bearquiz.jpg" alt="mockup of project">
                     </div>
                     <div class="secondary" data-aos="fade-up-right">
                         <h4>Bear Quiz </h4> 
                         <h5>[jQuery Interactive Site]</h5>
                         <p class="tools">jQuery // HTML // CSS </p>
-                        <p>
-                            This quiz was created using the jQuery Javascript library. This is an interactive, just-for-fun quiz that tells the user what kind of bear they would be based on user input! Users can then share the quiz on Twitter!
+                        <p>This quiz was created using the jQuery Javascript library. This is an interactive, just-for-fun quiz that tells the user what kind of bear they would be! Users can then share the quiz on Twitter!
                         </p>
                         <div class="btn-row">
                             <a href="https://liyingcodes.github.io/Proj_3_Quiz/" class="btn links" target="_blank">View Live</a>
@@ -154,44 +174,26 @@
                         </div>
                     </div>
                     <div class="primary responsive-hide-image" data-aos="fade-up-left">
-                        <img src="/assets/bearquiz.png" alt="mockup of project">
+                        <img src="/assets/bearquiz.jpg" alt="mockup of project">
                     </div>                  
                 </div>
+
                 
-                <div class="main__section--projects--project">
+                <!-- <div class="main__section--projects--project">
                     <div class="primary" data-aos="fade-up-right">
                         <img src="/assets/simpleflex.jpeg" alt="mockup of project">
-                    </div>
-                    <div class="secondary" data-aos="fade-up-left">
+                    </div> -->
+                    <!-- <div class="secondary" data-aos="fade-up-left">
                         <h4>SimpleFlex </h4>
                         <h5>[PSD Conversion]</h5>
                         <p class="tools">Flexbox // HTML // CSS</p>
-                        <p>Photoshop Document (PSD) conversion, fully responsive on all devices. Built with flexbox.</p>
+                        <p>This project is a Photoshop Document (PSD) conversion. It was built using flexbox and is fully responsive on all devices.</p>
                         <div class="btn-row">
                             <a href="https://liyingcodes.github.io/SimpleFlex/" class="btn links" target="_blank">View Live</a>
                             <a href="https://github.com/LiYingCodes/SimpleFlex" target="_blank" class="btn links">View Code</a>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="main__section--projects--project">
-                    <div class="primary responsive-show-image" data-aos="fade-up-left">
-                        <img src="/assets/sigma.jpeg" alt="mockup of project">
-                    </div>
-                    <div class="secondary" data-aos="fade-up-right">
-                        <h4>Sigma</h4>
-                        <h5>[PSD Conversion]</h5>
-                        <p class="tools"> Floats // HTML // CSS </p>
-                        <p>Photoshop Document (PSD) conversion, fully responsive on all devices. Built without grid or flexbox, only clearfix and floats!</p>
-                        <div class="btn-row">
-                            <a href="https://liyingcodes.github.io/Sigma/" class="btn links" target="_blank">View Live</a>
-                            <a href="https://github.com/LiYingCodes/Sigma" target="_blank" class="btn links">View Code</a>
-                        </div>
-                    </div>
-                    <div class="primary responsive-hide-image" data-aos="fade-up-left">
-                        <img src="/assets/sigma.jpeg" alt="mockup of project">
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div> -->
            </div>
         </section>
         
@@ -244,19 +246,21 @@
                     </div>                    
                 </div>
                 <div class="main__section--skills--row responsive-show-skills">
-                <ul>
-                    <li><i class="devicon-css3-plain colored"></i> CSS3</li>
-                    <li><i class="devicon-sass-original colored"></i> SASS</li>
-                    <li><i class="devicon-html5-plain colored"></i> HTML5 </li>
-                    <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
-                    <li><i class="devicon-jquery-plain colored"></i> jQuery</li>
-                    <li><i class="devicon-react-original colored"></i> React</li>
-                    <li><img src="assets/Firebase_Logo_Logomark.svg"> Firebase</li>
-                    <li><i class="devicon-github-plain colored"></i> Github</li>
-                    <li><i class="devicon-gulp-plain colored"></i> Gulp</li>
-                    <li><i class="devicon-git-plain colored"></i> Git</li>
-                </ul>
-            </div>
+                    <ul>
+                        <li><i class="devicon-css3-plain colored"></i> CSS3</li>
+                        <li><i class="devicon-sass-original colored"></i> SASS</li>
+                        <li><i class="devicon-html5-plain colored"></i> HTML5 </li>
+                        <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
+                        <li><i class="devicon-jquery-plain colored"></i> jQuery</li>
+                    </ul>
+                    <ul>
+                        <li><i class="devicon-react-original colored"></i> React</li>
+                        <li><img src="assets/Firebase_Logo_Logomark.svg"> Firebase</li>
+                        <li><i class="devicon-github-plain colored"></i> Github</li>
+                        <li><i class="devicon-gulp-plain colored"></i> Gulp</li>
+                        <li><i class="devicon-git-plain colored"></i> Git</li>
+                    </ul>
+                </div>
            </div>
             
         </section>
@@ -265,6 +269,7 @@
         <section id="contact" class="main__section--contact">
             <div class="inner-wrapper">
                 <h3>Contact Me</h3>
+                <a class="email" href="mailto:hello@liyinglim.com" target="_blank" >hello@liyinglim.com</a>
                 <div class="footer__intro">
                     <div class="footer__intro--contact">
                         <a href="mailto:hello@liyinglim.com" target="_blank">
@@ -282,14 +287,14 @@
                     </div>
 
                     <form action="http://www.focuspocus.io/magic/c46b1da0a3fdeb22975537456b418cb1" method="POST" class="footer__intro--form">
-                        <label for="name">Name: </label>
+                        <label for="name" class="visuallyhidden">Name: </label>
                         <input type="text" value="name" placeholder="Name" name="name" required>
 
-                        <label for="email">E-mail: </label>
+                        <label for="email" class="visuallyhidden">E-mail: </label>
                         <input type="text" value="email" placeholder="E-mail" name="email" required>
 
-                        <label for="comments">Leave me a message!</label>
-                        <textarea rows="10" placeholder="Type message here!" name="comments"></textarea>
+                        <label for="comments" class="visuallyhidden">Leave me a message!</label>
+                        <textarea rows="5" placeholder="Type message here!" name="comments"></textarea>
                         <input type="submit" value="Send!" required>
                     </form>
                 </div>
